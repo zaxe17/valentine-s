@@ -1,0 +1,95 @@
+body {
+    background-color: #FFBBC1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overflow: hidden;
+
+	
+    touch-action: none;        
+    user-scalable: no;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    font-family: "Lobster Two", sans-serif;
+    font-size: 2rem;
+    color: #FF8896;
+    border: 2px solid #FF6F77;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.sentence {
+    font-family: "Merriweather", serif;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff0000;
+    transform: rotate(0deg);
+    animation: falling 7s linear infinite;
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(-100vh) rotate(-360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 858px) {
+    body {
+        background-size: auto;
+    }
+    .container {
+        width: auto;
+        padding: 20px;
+    }
+    .sentence {
+        width: 100%; /* Adjust width for mobile */
+        white-space: wrap;
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+    button {
+        font-size: 1.5rem; /* Adjust button font size for mobile */
+    }
+}
